@@ -91,7 +91,7 @@ data "aws_iam_policy_document" "aws-config-role-policy" {
 # IAM
 #
 
-resource "aws_iam_role" "main" {
+resource "aws_iam_service_linked_role" "main" {
   count                = var.enable_config_recorder ? 1 : 0
   name                 = "AWSServiceRoleForConfig"
   assume_role_policy   = data.aws_iam_policy_document.aws-config-role-policy.json
