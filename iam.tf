@@ -94,7 +94,6 @@ data "aws_iam_policy_document" "aws-config-role-policy" {
 resource "aws_iam_service_linked_role" "main" {
   aws_service_name     = "config.amazonaws.com"
   count                = var.enable_config_recorder ? 1 : 0
-  name                 = "AWSServiceRoleForConfig"
   tags                 = var.tags
 }
 
