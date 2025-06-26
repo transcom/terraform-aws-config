@@ -30,7 +30,7 @@ resource "aws_config_configuration_recorder" "main" {
   count = var.enable_config_recorder ? 1 : 0
 
   name     = var.config_name
-  role_arn = aws_iam_role.main[count.index].arn
+  role_arn = aws_iam_service_linked_role.main[count.index].arn
 
   recording_group {
     all_supported                 = length(var.resource_types) == 0 ? true : false
