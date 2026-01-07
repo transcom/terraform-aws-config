@@ -1,0 +1,4 @@
+variables:  
+  TERRAFORM_MODULE_SYSTEM: aws
+include:
+  template: Terraform-Module.gitlab-ci.yml
